@@ -15,10 +15,17 @@ public class CommandScript : MonoBehaviour {
 		case ("echo"):
 			echo(arguments);
 			break;
+		case ("OOC"):
+			ooc(arguments);
+			break;
 		default:
 			commandNotFound(command);
 			break;
 		}
+	}
+
+	void ooc(List<string> args) {
+		transform.parent.FindChild ("ChatWindow").GetComponent<ChatWindowScript> ().addMessage (args[0]);
 	}
 
 	void echo(List<string> args) {
