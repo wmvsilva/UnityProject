@@ -48,6 +48,8 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\ChatWindowScript.cs" />
      <Compile Include="Assets\Scripts\CommandScript.cs" />
+     <Compile Include="Assets\Scripts\PlayerControllerScript.cs" />
+     <Compile Include="Assets\Scripts\PlayerMovementScript.cs" />
      <Compile Include="Assets\Scripts\TextGUI.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.3/UnityEngine.UI.dll</HintPath>
