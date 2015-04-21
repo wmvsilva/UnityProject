@@ -13,9 +13,10 @@ public class PlayerMovementScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	public void myUpdate () {
-		float inputX = Input.GetAxis ("Horizontal");
-		float inputY = Input.GetAxis ("Vertical");
 
+	}
+
+	public void giveXYInput(float inputX, float inputY) {
 		movement = new Vector2 (speed.x * inputX, speed.y * inputY);
 	}
 

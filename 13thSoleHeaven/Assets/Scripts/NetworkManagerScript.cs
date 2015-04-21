@@ -43,6 +43,7 @@ public class NetworkManagerScript : MonoBehaviour {
 			Debug.Log("myPlayer not found");
 			return;
 		}
+		player.enableInput ();
 	}
 	
 	// Update is called once per frame
