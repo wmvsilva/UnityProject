@@ -5,6 +5,7 @@ public class PlayerControllerScript : MonoBehaviour {
 
 	PlayerMovementScript movementScript;
 	PlayerInputScript inputScript;
+	NetworkControllerScript networkScript;
 
 	// Use this for initialization
 	void Awake () {
@@ -16,6 +17,10 @@ public class PlayerControllerScript : MonoBehaviour {
 		if (inputScript == null) {
 			Debug.LogError("Could not load Player Input Script");
 		}
+		networkScript = transform.FindChild ("NetworkController").GetComponent<NetworkControllerScript> ();
+		if (inputScript == null) {
+			Debug.LogError("Could not load Network Controller Script");
+		}
 	}
 
 	public PlayerMovementScript getMovementScript() {
@@ -23,20 +28,33 @@ public class PlayerControllerScript : MonoBehaviour {
 	}
 
 	public void enableInput() {
+		Debug.Log ("Enabling player input");
+		if (inputScript == null) {
+			Debug.Log ("Input script not initialized");
+		}
+		inputScript.enabled = true;
+	}
+
+	public void enableMovement() {
 		Debug.Log ("Enabling player movement");
 		if (movementScript == null) {
 			Debug.Log ("Movement script not initialized");
 		}
-		inputScript.enabled = true;
+		movementScript.enabled = true;
+	}
+
+	public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info) {
+		networkScript.myOnPhotonSerializeView (stream, info);
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		inputScript.myUpdate ();
 		movementScript.myUpdate ();
+		networkScript.myUpdate ();
 	}
 
 	void FixedUpdate() {
-		rigidbody2D.velocity = movementScript.myFixedUpdate ();
+		movementScript.myFixedUpdate (transform);
 	}
 }

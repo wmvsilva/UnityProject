@@ -20,7 +20,9 @@ public class PlayerMovementScript : MonoBehaviour {
 		movement = new Vector2 (speed.x * inputX, speed.y * inputY);
 	}
 
-	public Vector2 myFixedUpdate() {
-		return movement;
+	public void myFixedUpdate(Transform player) {
+		if (isActiveAndEnabled) {
+			player.rigidbody2D.velocity = movement;
+		}
 	}
 }
