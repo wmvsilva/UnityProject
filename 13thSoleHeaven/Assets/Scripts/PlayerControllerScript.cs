@@ -6,6 +6,7 @@ public class PlayerControllerScript : MonoBehaviour {
 	PlayerMovementScript movementScript;
 	PlayerInputScript inputScript;
 	NetworkControllerScript networkScript;
+	VisionControllerScript visionScript;
 
 	// Use this for initialization
 	void Awake () {
@@ -20,6 +21,10 @@ public class PlayerControllerScript : MonoBehaviour {
 		networkScript = transform.FindChild ("NetworkController").GetComponent<NetworkControllerScript> ();
 		if (inputScript == null) {
 			Debug.LogError("Could not load Network Controller Script");
+		}
+		visionScript = transform.FindChild ("VisionController").GetComponent<VisionControllerScript> ();
+		if (visionScript == null) {
+			Debug.LogError("Could not load Vision Controller Script");
 		}
 	}
 
@@ -41,6 +46,14 @@ public class PlayerControllerScript : MonoBehaviour {
 			Debug.Log ("Movement script not initialized");
 		}
 		movementScript.enabled = true;
+	}
+
+	public void enableCamera() {
+		Debug.Log ("Enabling camera");
+		if (visionScript == null) {
+			Debug.Log ("Vision script not initialized");
+		}
+		visionScript.camera.enabled = true;
 	}
 
 	public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info) {

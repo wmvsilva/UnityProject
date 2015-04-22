@@ -45,6 +45,7 @@ public class NetworkManagerScript : MonoBehaviour {
 		}
 		player.enableInput ();
 		player.enableMovement ();
+		player.enableCamera ();
 	}
 	
 	// Update is called once per frame
