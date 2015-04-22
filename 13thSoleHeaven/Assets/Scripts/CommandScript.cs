@@ -25,7 +25,8 @@ public class CommandScript : MonoBehaviour {
 	}
 
 	void ooc(List<string> args) {
-		transform.parent.FindChild ("ChatWindow").GetComponent<ChatWindowScript> ().addMessage (args[0]);
+		transform.parent.FindChild ("ChatWindow").GetComponent<PhotonView> ()
+			.RPC ("addMessage", PhotonTargets.All, args [0]);
 	}
 
 	void echo(List<string> args) {

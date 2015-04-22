@@ -29,6 +29,7 @@ public class ChatWindowScript : MonoBehaviour {
 
 	}
 
+	[RPC]
 	public void addMessage(string msg) {
 		messages.Enqueue (msg);
 	}
