@@ -53,7 +53,7 @@ public class PlayerControllerScript : MonoBehaviour {
 		if (visionScript == null) {
 			Debug.Log ("Vision script not initialized");
 		}
-		visionScript.camera.enabled = true;
+		visionScript.enableCamera ();
 	}
 
 	public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info) {
