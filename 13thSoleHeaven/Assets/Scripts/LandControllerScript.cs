@@ -4,8 +4,8 @@ using System.Collections.Generic;
 
 public class LandControllerScript : MonoBehaviour {
 
-	int width = 2;
-	int height = 2;
+	public int width = 2;
+	public int height = 2;
 	int squareLength = 1;
 
 	// Use this for initialization

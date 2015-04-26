@@ -39,11 +39,20 @@ public class NetworkManagerScript : MonoBehaviour {
 
 	void SpawnInitialLand() {
 		if (instantiateEverything) {
+			Debug.Log("Initial land spawn.");
 			GameObject landObject = (GameObject) PhotonNetwork.Instantiate ("Land",
 			                                                          Vector3.zero,
 			                                                          Quaternion.identity, 0);
 			land = landObject.GetComponent<LandControllerScript>();
 			land.myInitialize();
+			//Set squares as children of Land
+			EnvironmentControllerScript[] envs = EnvironmentControllerScript.FindObjectsOfType<EnvironmentControllerScript>();
+			if (envs.GetLength(0) == 0) {
+				Debug.Log("Found no environment controller scripts.");
+			}
+			foreach (EnvironmentControllerScript env in envs) {
+				env.changeParentTo(land.transform);
+			}
 		}
 	}
 
