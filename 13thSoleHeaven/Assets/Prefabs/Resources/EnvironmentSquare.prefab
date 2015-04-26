@@ -11,6 +11,7 @@ GameObject:
   - 114: {fileID: 11438036}
   - 212: {fileID: 21256446}
   - 114: {fileID: 11411072}
+  - 61: {fileID: 6137370}
   m_Layer: 0
   m_Name: EnvironmentSquare
   m_TagString: Untagged
@@ -30,6 +31,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!61 &6137370
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 138036}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: 1, y: 1}
+  m_Center: {x: .5, y: -.5}
 --- !u!114 &11411072
 MonoBehaviour:
   m_ObjectHideFlags: 1

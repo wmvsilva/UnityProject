@@ -20,6 +20,7 @@ public class LandControllerScript : MonoBehaviour {
 		                                                              new Vector3(x, y),
 		                                                              Quaternion.identity, 0);
 			EnvironmentControllerScript conSquare = oneSquare.GetComponent<EnvironmentControllerScript>();
+			conSquare.changeZoneNum(i);
 
 			if (conSquare == null) {
 				Debug.Log("Environment controller script was null for a square");
