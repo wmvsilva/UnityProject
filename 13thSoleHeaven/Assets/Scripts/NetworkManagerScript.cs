@@ -4,6 +4,8 @@ using System.Collections;
 public class NetworkManagerScript : MonoBehaviour {
 	
 	public PlayerControllerScript player;
+	public LandControllerScript land;
+	bool instantiateEverything = false;
 	
 	// Use this for initialization
 	void Start () {
@@ -26,11 +28,40 @@ public class NetworkManagerScript : MonoBehaviour {
 	void OnPhotonRandomJoinFailed() {
 		Debug.Log("OnPhotonRandomJoinFailed");
 		PhotonNetwork.CreateRoom(null);
+		instantiateEverything = true;
 	}
 	
 	void OnJoinedRoom() {
 		Debug.Log("OnJoinedRoom");
 		SpawnMyPlayer();
+		SpawnInitialLand ();
+	}
+
+	void SpawnInitialLand() {
+		if (instantiateEverything) {
+			GameObject landObject = (GameObject) PhotonNetwork.Instantiate ("Land",
+			                                                          Vector3.zero,
+			                                                          Quaternion.identity, 0);
+			land = landObject.GetComponent<LandControllerScript>();
+			land.myInitialize();
+		}
+	}
+
+	void attemptToSpawnLand() {
+		land = LandControllerScript.FindObjectOfType<LandControllerScript> ();
+		if (land == null) {
+			return;
+		}
+		Debug.Log ("Initializing land.");
+		
+		EnvironmentControllerScript[] envs = EnvironmentControllerScript.FindObjectsOfType<EnvironmentControllerScript>();
+		if (envs.GetLength(0) == 0) {
+			Debug.Log("Found no environment controller scripts.");
+		}
+		foreach (EnvironmentControllerScript env in envs) {
+			env.changeParentTo(land.transform);
+		}
+		Debug.Log ("Land initialized.");
 	}
 	
 	void SpawnMyPlayer() {
@@ -50,6 +81,8 @@ public class NetworkManagerScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+		if (land == null) {
+			attemptToSpawnLand();
+		}
 	}
 }
