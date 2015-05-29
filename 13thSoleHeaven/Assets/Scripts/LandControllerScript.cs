@@ -21,6 +21,8 @@ public class LandControllerScript : MonoBehaviour {
 		                                                              Quaternion.identity, 0);
 			EnvironmentControllerScript conSquare = oneSquare.GetComponent<EnvironmentControllerScript>();
 			conSquare.changeZoneNum(i);
+			//Add oxygen to the square
+			conSquare.addGas(new OxygenScript(1,1));
 
 			if (conSquare == null) {
 				Debug.Log("Environment controller script was null for a square");

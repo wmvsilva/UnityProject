@@ -21,6 +21,10 @@ public class PlayerEnvironmentController : MonoBehaviour {
 		Debug.Log ("Could not remove the given environment.");
 	}
 
+	public LinkedList<EnvironmentControllerScript> getEnvs() {
+		return envs;
+	}
+
 	// Use this for initialization
 	void Start () {
 	

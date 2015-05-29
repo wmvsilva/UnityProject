@@ -1,9 +1,19 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class EnvironmentControllerScript : MonoBehaviour {
 
 	int zoneNum;
+	List<IGas> gases = new List<IGas> ();
+
+	public void addGas(IGas g) {
+		gases.Add (g);
+	}
+
+	public List<IGas> getGases() {
+		return gases;
+	}
 
 	public void changeZoneNum(int newZoneNum) {
 		zoneNum = newZoneNum;
