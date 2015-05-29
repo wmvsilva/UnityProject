@@ -7,6 +7,8 @@ public class PlayerControllerScript : MonoBehaviour {
 	PlayerInputScript inputScript;
 	NetworkControllerScript networkScript;
 	VisionControllerScript visionScript;
+	PlayerEnvironmentController environmentScript;
+	PlayerHealthScript healthScript;
 
 	// Use this for initialization
 	void Awake () {
@@ -25,6 +27,14 @@ public class PlayerControllerScript : MonoBehaviour {
 		visionScript = transform.FindChild ("VisionController").GetComponent<VisionControllerScript> ();
 		if (visionScript == null) {
 			Debug.LogError("Could not load Vision Controller Script");
+		}
+		environmentScript = transform.FindChild ("EnvironmentController").GetComponent<PlayerEnvironmentController> ();
+		if (environmentScript == null) {
+			Debug.LogError("Could not load Player Environment Controller Script");
+		}
+		healthScript = transform.FindChild ("HealthController").GetComponent<PlayerHealthScript> ();
+		if (healthScript == null) {
+			Debug.LogError("Could not load Player Health Script");
 		}
 	}
 
