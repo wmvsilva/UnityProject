@@ -5,6 +5,7 @@ public class NetworkManagerScript : MonoBehaviour {
 	
 	public PlayerControllerScript player;
 	public LandControllerScript land;
+	public PlayerManagerScript players;
 	bool instantiateEverything = false;
 	
 	// Use this for initialization
@@ -33,6 +34,7 @@ public class NetworkManagerScript : MonoBehaviour {
 	
 	void OnJoinedRoom() {
 		Debug.Log("OnJoinedRoom");
+		SpawnInitialManager ();
 		SpawnMyPlayer();
 		SpawnInitialLand ();
 	}
@@ -52,6 +54,22 @@ public class NetworkManagerScript : MonoBehaviour {
 			}
 			foreach (EnvironmentControllerScript env in envs) {
 				env.changeParentTo(land.transform);
+			}
+		}
+	}
+
+	void giveGUIManager() {
+		GameObject.Find ("GUI").GetComponentInChildren<CommandScript> ().setPlayerManager (players);
+	}
+
+	void SpawnInitialManager() {
+		if (instantiateEverything) {
+			Debug.Log("Initial manager spawn.");
+			GameObject managerObject = (GameObject) PhotonNetwork.Instantiate ("PlayerManager",
+			                                                                Vector3.zero,
+			                                                                Quaternion.identity, 0);
+			if (managerObject == null) {
+				Debug.LogError("Could not load manager object");
 			}
 		}
 	}
@@ -92,6 +110,11 @@ public class NetworkManagerScript : MonoBehaviour {
 	void Update () {
 		if (land == null) {
 			attemptToSpawnLand();
+		}
+		if (players == null && PlayerManagerScript.FindObjectOfType<PlayerManagerScript> () != null) {
+			players = PlayerManagerScript.FindObjectOfType<PlayerManagerScript> ();
+			giveGUIManager();
+			player.transform.gameObject.GetComponent<PhotonView> ().RPC ("addToPlayerManager", PhotonTargets.AllBuffered, new string[]{});
 		}
 	}
 }

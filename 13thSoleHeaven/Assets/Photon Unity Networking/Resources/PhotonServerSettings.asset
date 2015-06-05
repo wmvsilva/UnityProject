@@ -30,4 +30,5 @@ MonoBehaviour:
   - RequestForPickupTimes
   - addMessage
   - changeParentTo
+  - addToPlayerManager
   DisableAutoOpenWizard: 0

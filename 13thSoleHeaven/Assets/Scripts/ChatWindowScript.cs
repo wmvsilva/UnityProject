@@ -34,6 +34,10 @@ public class ChatWindowScript : MonoBehaviour {
 		messages.Enqueue (msg);
 	}
 
+	public void addPlayerMessage(string msg) {
+		messages.Enqueue (msg);
+	}
+
 	// Use this for initialization
 	void Start () {
 	

@@ -4,6 +4,8 @@ using System.Collections.Generic;
 
 public class CommandScript : MonoBehaviour {
 
+	PlayerManagerScript playerManager;
+
 	public void giveCommand(string cmd) {
 		string[] cmdArray = cmd.Split (' ');
 		string command = cmdArray[0];
@@ -17,6 +19,9 @@ public class CommandScript : MonoBehaviour {
 			break;
 		case ("OOC"):
 			ooc(arguments);
+			break;
+		case ("numPlayers"):
+			transform.parent.FindChild("ChatWindow").GetComponent<ChatWindowScript>().addPlayerMessage(playerManager.numPlayers());
 			break;
 		default:
 			commandNotFound(command);
@@ -49,5 +54,13 @@ public class CommandScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 	
+	}
+
+	public void setPlayerManager(PlayerManagerScript m) {
+		Debug.Log ("Setting player manager for GUI");
+		playerManager = m;
+		if (playerManager == null) {
+			Debug.LogError("Player Manager for GUI was not set");
+		}
 	}
 }

@@ -248,6 +248,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   land: {fileID: 0}
+  players: {fileID: 0}
 --- !u!4 &710830724
 Transform:
   m_ObjectHideFlags: 0

@@ -9,6 +9,7 @@ public class PlayerControllerScript : MonoBehaviour {
 	VisionControllerScript visionScript;
 	PlayerEnvironmentController environmentScript;
 	PlayerHealthScript healthScript;
+	PlayerManagerScript managerScript;
 
 	// Use this for initialization
 	void Awake () {
@@ -64,6 +65,18 @@ public class PlayerControllerScript : MonoBehaviour {
 			Debug.Log ("Vision script not initialized");
 		}
 		visionScript.enableCamera ();
+	}
+
+	[RPC]
+	public void addToPlayerManager() {
+		Debug.Log ("Adding player to player manager");
+		PlayerManagerScript manager = PlayerManagerScript.FindObjectOfType<PlayerManagerScript> ();
+		if (manager == null) {
+			Debug.LogError("Could not find the player manager.");
+			return;
+		}
+		manager.addPlayerToList (this);
+		managerScript = manager;
 	}
 
 	public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info) {
