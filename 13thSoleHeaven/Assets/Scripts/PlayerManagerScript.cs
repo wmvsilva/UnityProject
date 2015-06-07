@@ -15,6 +15,14 @@ public class PlayerManagerScript : MonoBehaviour {
 		return players.Count.ToString();
 	}
 
+	public string listNames() {
+		string names = "";
+		foreach (PlayerControllerScript p in players) {
+			names = names + p.playerName + ", ";
+		}
+		return names;
+	}
+
 	// Use this for initialization
 	void Start () {
 	

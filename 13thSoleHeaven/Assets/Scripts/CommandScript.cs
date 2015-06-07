@@ -23,10 +23,19 @@ public class CommandScript : MonoBehaviour {
 		case ("numPlayers"):
 			transform.parent.FindChild("ChatWindow").GetComponent<ChatWindowScript>().addPlayerMessage(playerManager.numPlayers());
 			break;
+		case ("listNames"):
+			listNames();
+			break;
 		default:
 			commandNotFound(command);
 			break;
 		}
+	}
+
+	void listNames() {
+		string names = playerManager.listNames ();
+		transform.parent.FindChild ("ChatWindow").GetComponent<PhotonView> ()
+			.RPC ("addMessage", PhotonTargets.All, names);
 	}
 
 	void ooc(List<string> args) {

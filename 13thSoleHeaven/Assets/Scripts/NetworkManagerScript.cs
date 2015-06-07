@@ -7,9 +7,12 @@ public class NetworkManagerScript : MonoBehaviour {
 	public LandControllerScript land;
 	public PlayerManagerScript players;
 	bool instantiateEverything = false;
+	StaticInformation menuInformation;
 	
 	// Use this for initialization
 	void Start () {
+		menuInformation = GameObject.Find ("StaticInformation").GetComponent<StaticInformation> ();
+		Debug.Log ("The player name is: " + menuInformation.playerName);
 		Connect();
 	}
 	
@@ -104,6 +107,7 @@ public class NetworkManagerScript : MonoBehaviour {
 		player.enableInput ();
 		player.enableMovement ();
 		player.enableCamera ();
+		myPlayer.GetComponent<PhotonView> ().RPC ("setPlayerName", PhotonTargets.AllBuffered, menuInformation.playerName);
 	}
 	
 	// Update is called once per frame

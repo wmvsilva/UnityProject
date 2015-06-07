@@ -31,4 +31,5 @@ MonoBehaviour:
   - addMessage
   - changeParentTo
   - addToPlayerManager
+  - setPlayerName
   DisableAutoOpenWizard: 0

@@ -3,6 +3,8 @@ using System.Collections;
 
 public class PlayerControllerScript : MonoBehaviour {
 
+	public string playerName;
+
 	PlayerMovementScript movementScript;
 	PlayerInputScript inputScript;
 	NetworkControllerScript networkScript;
@@ -10,6 +12,12 @@ public class PlayerControllerScript : MonoBehaviour {
 	PlayerEnvironmentController environmentScript;
 	PlayerHealthScript healthScript;
 	PlayerManagerScript managerScript;
+
+	[RPC]
+	public void setPlayerName(string name) {
+		Debug.Log ("Setting name to: " + name);
+		playerName = name;
+	}
 
 	// Use this for initialization
 	void Awake () {
