@@ -26,10 +26,24 @@ public class CommandScript : MonoBehaviour {
 		case ("listNames"):
 			listNames();
 			break;
+		case ("health"):
+			health(arguments);
+			break;
 		default:
 			commandNotFound(command);
 			break;
 		}
+	}
+
+	void health(List<string> args) {
+		string name = "";
+		foreach (string s in args) {
+			name = name + s + " ";
+		}
+		name = name.Substring (0, name.Length - 1);
+		PlayerControllerScript thePlayer = playerManager.getPlayer (name);
+		transform.parent.FindChild ("ChatWindow").GetComponent<PhotonView> ()
+			.RPC ("addMessage", PhotonTargets.All, thePlayer.getHealthScript ().oxygenSaturation.ToString());
 	}
 
 	void listNames() {

@@ -13,6 +13,10 @@ public class PlayerControllerScript : MonoBehaviour {
 	PlayerHealthScript healthScript;
 	PlayerManagerScript managerScript;
 
+	public PlayerHealthScript getHealthScript() {
+		return healthScript;
+	}
+
 	[RPC]
 	public void setPlayerName(string name) {
 		Debug.Log ("Setting name to: " + name);

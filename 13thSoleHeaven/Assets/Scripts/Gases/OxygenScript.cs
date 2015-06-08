@@ -20,6 +20,6 @@ public class OxygenScript : IGas {
 	}
 	
 	public void affectPlayerHealth(PlayerHealthScript healthScript) {
-		healthScript.addOxygenToBlood ();
+		healthScript.addOxygenToBlood (6.0);
 	}
 }

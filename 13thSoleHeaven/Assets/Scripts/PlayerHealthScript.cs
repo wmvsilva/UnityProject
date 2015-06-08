@@ -6,6 +6,8 @@ public class PlayerHealthScript : MonoBehaviour {
 	PlayerControllerScript player;
 	PlayerEnvironmentController playerEnv;
 	float breathTimer = 4;
+	float oxygenDecreaseTimer = 1;
+	public double oxygenSaturation = 100.00;
 
 	public void breathe() {
 		Debug.Log ("Took a breath");
@@ -16,8 +18,8 @@ public class PlayerHealthScript : MonoBehaviour {
 		}
 	}
 
-	public void addOxygenToBlood() {
-		Debug.Log ("Added oxygen to blood");
+	public void addOxygenToBlood(double percent) {
+		oxygenSaturation = oxygenSaturation + percent;
 	}
 
 	// Use this for initialization
@@ -38,6 +40,11 @@ public class PlayerHealthScript : MonoBehaviour {
 		if (breathTimer <= 0) {
 			breathTimer = 4;
 			breathe();
+		}
+		oxygenDecreaseTimer -= Time.deltaTime;
+		if (oxygenDecreaseTimer <= 0) {
+			oxygenDecreaseTimer = 1;
+			oxygenSaturation = oxygenSaturation - 0.25;
 		}
 	}
 }

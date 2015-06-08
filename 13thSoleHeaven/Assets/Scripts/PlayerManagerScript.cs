@@ -11,6 +11,16 @@ public class PlayerManagerScript : MonoBehaviour {
 		players.Add (player);
 	}
 
+	public PlayerControllerScript getPlayer(string name) {
+		foreach (PlayerControllerScript p in players) {
+			if (p.playerName.Equals(name)) {
+				return p;
+			}
+		}
+		Debug.LogError ("Could not find player named: " + name);
+		throw new UnityException ();
+	}
+
 	public string numPlayers() {
 		return players.Count.ToString();
 	}
