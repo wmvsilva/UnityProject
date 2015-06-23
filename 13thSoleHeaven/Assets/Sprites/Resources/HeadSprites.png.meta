@@ -1,15 +1,15 @@
 fileFormatVersion: 2
-guid: 40631040fbb883146ad7adfe5befcaeb
+guid: 2a36c921636daaa4b94970fc55d21418
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Torso_0
-    21300002: Torso_1
-    21300004: Torso_2
-    21300006: Torso_3
-    21300008: Torso_4
-    21300010: Torso_5
-    21300012: Torso_6
-    21300014: Torso_7
+    21300000: HeadSprites_0
+    21300002: HeadSprites_1
+    21300004: HeadSprites_2
+    21300006: HeadSprites_3
+    21300008: HeadSprites_4
+    21300010: HeadSprites_5
+    21300012: HeadSprites_6
+    21300014: HeadSprites_7
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -29,7 +29,7 @@ TextureImporter:
   grayScaleToAlpha: 0
   generateCubemap: 0
   seamlessCubemap: 0
-  textureFormat: -1
+  textureFormat: -3
   maxTextureSize: 1024
   textureSettings:
     filterMode: 0
@@ -51,85 +51,85 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: Torso_0
+    - name: HeadSprites_0
       rect:
         serializedVersion: 2
-        x: 3
-        y: 14
-        width: 20
-        height: 35
-      alignment: 7
-      pivot: {x: .5, y: 0}
+        x: 8
+        y: 5
+        width: 22
+        height: 28
+      alignment: 6
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Torso_1
+    - name: HeadSprites_1
       rect:
         serializedVersion: 2
-        x: 26
+        x: 42
         y: 8
-        width: 15
-        height: 41
-      alignment: 7
-      pivot: {x: .5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Torso_2
-      rect:
-        serializedVersion: 2
-        x: 44
-        y: 6
-        width: 12
-        height: 43
-      alignment: 7
-      pivot: {x: .5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Torso_3
-      rect:
-        serializedVersion: 2
-        x: 59
-        y: 3
         width: 20
-        height: 46
-      alignment: 7
-      pivot: {x: .5, y: 0}
+        height: 23
+      alignment: 6
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Torso_4
+    - name: HeadSprites_2
       rect:
         serializedVersion: 2
-        x: 81
-        y: 14
+        x: 68
+        y: 4
         width: 20
-        height: 35
-      alignment: 7
-      pivot: {x: .5, y: 0}
+        height: 30
+      alignment: 6
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Torso_5
+    - name: HeadSprites_3
       rect:
         serializedVersion: 2
-        x: 104
-        y: 3
-        width: 20
-        height: 46
-      alignment: 7
-      pivot: {x: .5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Torso_6
-      rect:
-        serializedVersion: 2
-        x: 127
-        y: 6
-        width: 12
-        height: 43
-      alignment: 7
-      pivot: {x: .5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Torso_7
-      rect:
-        serializedVersion: 2
-        x: 142
+        x: 98
         y: 8
-        width: 15
-        height: 41
-      alignment: 7
-      pivot: {x: .5, y: 0}
+        width: 16
+        height: 23
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: HeadSprites_4
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 5
+        width: 22
+        height: 28
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: HeadSprites_5
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 8
+        width: 16
+        height: 23
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: HeadSprites_6
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 4
+        width: 20
+        height: 30
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: HeadSprites_7
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 7
+        width: 20
+        height: 23
+      alignment: 6
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
