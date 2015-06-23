@@ -10,6 +10,7 @@ public class VisionControllerScript : MonoBehaviour {
 		float yRectMove = 1 - cameraRectHeight;
 		transform.camera.rect = new Rect (0, yRectMove, 0.5f, cameraRectHeight);
 		Debug.Log ("Camera height set to " + cameraRectHeight);
+		transform.camera.orthographicSize = (screenHeight / 2) / 100;
 		transform.camera.enabled = true;
 	}
 
