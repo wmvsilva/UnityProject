@@ -1,0 +1,135 @@
+fileFormatVersion: 2
+guid: c9b6e744e4dd898419adb0c4ef1c39aa
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: RightArmSprites_0
+    21300002: RightArmSprites_1
+    21300004: RightArmSprites_2
+    21300006: RightArmSprites_3
+    21300008: RightArmSprites_4
+    21300010: RightArmSprites_5
+    21300012: RightArmSprites_6
+    21300014: RightArmSprites_7
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: RightArmSprites_0
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 24
+        width: 18
+        height: 48
+      alignment: 3
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RightArmSprites_1
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 19
+        width: 18
+        height: 54
+      alignment: 3
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RightArmSprites_2
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 20
+        width: 14
+        height: 51
+      alignment: 3
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RightArmSprites_3
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 17
+        width: 15
+        height: 54
+      alignment: 3
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RightArmSprites_4
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 18
+        width: 18
+        height: 48
+      alignment: 3
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RightArmSprites_5
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 14
+        width: 15
+        height: 53
+      alignment: 3
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RightArmSprites_6
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 16
+        width: 14
+        height: 51
+      alignment: 3
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RightArmSprites_7
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 10
+        width: 15
+        height: 61
+      alignment: 3
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 

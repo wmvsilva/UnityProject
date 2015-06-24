@@ -6,15 +6,30 @@ public class PlayerSpriteScript : MonoBehaviour {
 	public Sprite[] torsoSprites;
 	public Sprite[] headSprites;
 	public Sprite[] leftArmSprites;
+	public Sprite[] rightArmSprites;
+	public Sprite[] leftLegSprites;
+	public Sprite[] rightLegSprites;
+	public Sprite[] leftFootSprites;
+	public Sprite[] rightFootSprites;
 	SpriteRenderer torsoRenderer;
 	SpriteRenderer headRenderer;
 	SpriteRenderer leftArmRenderer;
+	SpriteRenderer rightArmRenderer;
+	SpriteRenderer leftLegRenderer;
+	SpriteRenderer rightLegRenderer;
+	SpriteRenderer leftFootRenderer;
+	SpriteRenderer rightFootRenderer;
 
 	// Use this for initialization
 	void Start () {
 		LoadSprites ("TorsoSprites", "TorsoSprite", torsoSprites, torsoRenderer);
 		LoadSprites ("HeadSprites", "HeadSprite", headSprites, headRenderer);
 		LoadSprites ("LeftArmSprites", "LeftArmSprite", leftArmSprites, leftArmRenderer);
+		LoadSprites ("RightArmSprites", "RightArmSprite", rightArmSprites, rightArmRenderer);
+		LoadSprites ("LeftLegSprites", "LeftLegSprite", leftLegSprites, leftLegRenderer);
+		LoadSprites ("RightLegSprites", "RightLegSprite", rightLegSprites, rightLegRenderer);
+		LoadSprites ("LeftFootSprites", "LeftFootSprite", leftFootSprites, leftFootRenderer);
+		LoadSprites ("RightFootSprites", "RightFootSprite", rightFootSprites, rightFootRenderer);
 	}
 
 	void LoadSprites(string spriteName, string childName, Sprite[] sprites, SpriteRenderer renderer) {
