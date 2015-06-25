@@ -11,6 +11,8 @@ public class PlayerSpriteScript : MonoBehaviour {
 	public Sprite[] rightLegSprites;
 	public Sprite[] leftFootSprites;
 	public Sprite[] rightFootSprites;
+	public Sprite[] leftHandSprites;
+	public Sprite[] rightHandSprites;
 	SpriteRenderer torsoRenderer;
 	SpriteRenderer headRenderer;
 	SpriteRenderer leftArmRenderer;
@@ -19,6 +21,8 @@ public class PlayerSpriteScript : MonoBehaviour {
 	SpriteRenderer rightLegRenderer;
 	SpriteRenderer leftFootRenderer;
 	SpriteRenderer rightFootRenderer;
+	SpriteRenderer leftHandRenderer;
+	SpriteRenderer rightHandRenderer;
 
 	// Use this for initialization
 	void Start () {
@@ -30,6 +34,8 @@ public class PlayerSpriteScript : MonoBehaviour {
 		LoadSprites ("RightLegSprites", "RightLegSprite", rightLegSprites, rightLegRenderer);
 		LoadSprites ("LeftFootSprites", "LeftFootSprite", leftFootSprites, leftFootRenderer);
 		LoadSprites ("RightFootSprites", "RightFootSprite", rightFootSprites, rightFootRenderer);
+		LoadSprites ("LeftHandSprites", "LeftHandSprite", leftHandSprites, leftHandRenderer);
+		LoadSprites ("RightHandSprites", "RightHandSprite", rightHandSprites, rightHandRenderer);
 	}
 
 	void LoadSprites(string spriteName, string childName, Sprite[] sprites, SpriteRenderer renderer) {
