@@ -9,17 +9,9 @@ public class GameGUIScript : MonoBehaviour {
 	 * Swaps the currently selected hand from left to right or vice versa. 
 	 */
 	public void swapHands() {
-		//TODO
+		// TODO Implement swapping logic. The player should have some enumeration describing whether
+		// they are currently using their left or right hand. When the player clicks on items, they will
+		// interact with the currently selected hand.
 		Debug.Log ("Swapped hands");
-	}
-
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
 	}
 }

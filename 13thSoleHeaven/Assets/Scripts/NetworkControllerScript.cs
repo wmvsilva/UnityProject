@@ -1,13 +1,21 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+/**
+ * Controls all network events that are constantly updated like player movement, etc.
+ */
 public class NetworkControllerScript : Photon.MonoBehaviour {
 
+	// The current player's input controller
 	PlayerControllerScript controllerScript;
+	// Holds position component received over the network.
 	Vector3 realPosition = Vector3.zero;
+	// HOlds velocity component received over the network.
 	Vector2 realVelocity = Vector2.zero;
 
-	// Use this for initialization
+	/**
+	 * Awake- Unity uses this for initialization.
+	 * Retrieves and caches the player's input controller script.
+	 */
 	void Awake () {
 		controllerScript = transform.GetComponentInParent<PlayerControllerScript> ();
 		if (controllerScript == null) {
@@ -15,7 +23,10 @@ public class NetworkControllerScript : Photon.MonoBehaviour {
 		}
 	}
 	
-	// Update is called once per frame
+	/**
+	 * myUpdate- Should be called once a frame.
+	 * When another player's photon view is found, lerp their velocity and position based on the received network data.
+	 */
 	public void myUpdate () {
 		if (controllerScript.transform.GetComponent<PhotonView>().isMine) {
 			// Do nothing
@@ -25,6 +36,9 @@ public class NetworkControllerScript : Photon.MonoBehaviour {
 		}
 	}
 
+	/**
+	 * myOnPhotonSerializeView- given a photon steam, either sends or recieves player position and velocity.
+	 */
 	public void myOnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info) {
 
 		if (stream.isWriting) {

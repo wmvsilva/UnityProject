@@ -1,14 +1,22 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-
+/**
+ * Controls all environment square units in the game. Currently, its only job is the initialization of
+ * these units
+ */
 public class LandControllerScript : MonoBehaviour {
 
+	// The number of land units there are horizontally to be initialized
 	public int width = 2;
+	// The number of land units there are vertically to be initialized
 	public int height = 2;
+	// The length of each environment square in Unity units
 	int squareLength = 1;
 
-	// Use this for initialization
+	/**
+	 * myInitialize- initializes all environment squares and gives them some units of oxygen.
+	 */
 	public void myInitialize () {
 		Debug.Log ("Initializing environment");
 		int widthToTrack = 0;
@@ -34,10 +42,5 @@ public class LandControllerScript : MonoBehaviour {
 			}
 		}
 		Debug.Log ("Environment initialized.");
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
 	}
 }
